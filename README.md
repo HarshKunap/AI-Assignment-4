@@ -1,112 +1,122 @@
-AI Assignment: Constraint Satisfaction Problems (CSP)
-Overview
-This project contains Python implementations of four problems modeled as Constraint Satisfaction Problems (CSPs). Each problem is solved using a recursive backtracking search algorithm combined with strict constraint checking.
+# Constraint Satisfaction Systems
 
-1. Map Coloring (Australia)
-Problem
-Assign colors to the seven principal states and territories of Australia so that no two adjacent regions share the same color.
+A collection of artificial intelligence implementations focused on solving real-world and classical problems using Constraint Satisfaction Problem (CSP) techniques and recursive backtracking.
 
-Approach
-Variables: States (WA, NT, Q, SA, NSW, V, T)
+## Overview
 
-Domain: {Red, Green, Blue}
+This repository explores how complex problems can be modeled using variables, domains, and constraints, and solved systematically through search and constraint validation.
 
-Constraints: Neighboring states must have completely different colors
+The project includes multiple CSP-based implementations ranging from map coloring and puzzle solving to symbolic arithmetic reasoning.
 
-Method: Backtracking Search
+## Implemented Systems
 
-2. Telangana Map Coloring
-Problem
-Assign colors to the 33 districts of Telangana so that adjacent districts do not share the same color.
+### Map Coloring for Australia
 
-Approach
-Variables: 33 Districts (e.g., Hyderabad, Rangareddy)
+A graph coloring implementation where regions of Australia are assigned colors such that neighboring states do not share the same color.
 
-Domain: {Red, Green, Blue}
+Concepts explored:
 
-Constraints: Adjacent districts must have different colors
+- Constraint propagation
+- Graph-based representations
+- Backtracking search
+- State validation
 
-Method: Backtracking Search
+### Telangana District Map Coloring
 
-Visualization
-Built using NetworkX and Matplotlib libraries
+A larger-scale map coloring problem involving district-level adjacency constraints.
 
-Districts are represented as graph nodes
+The implementation includes graph visualization using NetworkX and Matplotlib to represent geographic relationships and final solutions.
 
-Adjacency is represented with connecting edges
+Concepts explored:
 
-The final color assignment is displayed in a visual graph
+- Large-scale CSP modeling
+- Graph visualization
+- Adjacency constraints
+- Search optimization
 
-3. Sudoku Solver & Generator
-Problem
-Programmatically solve a 9x9 Sudoku board and generate a playable puzzle by removing a specific number of cells.
+### Sudoku Solver and Generator
 
-CSP Formulation
-Variables: Every cell in the 9x9 grid
+A complete Sudoku-solving system capable of generating and solving playable 9x9 Sudoku puzzles using recursive search and constraint validation.
 
-Domain: Integers {1 - 9}
+Concepts explored:
 
-Constraints:
+- Recursive backtracking
+- Constraint checking
+- Grid optimization
+- Search-space pruning
 
-No repeated values in any horizontal row
+### Cryptarithmetic Solver
 
-No repeated values in any vertical column
+A generalized symbolic arithmetic solver that assigns valid digit mappings to letters in word-based arithmetic equations.
 
-No repeated values in any 3x3 subgrid block
+Default implementation solves:
 
-Method: Randomized backtracking search over empty cells with constant constraint checks
+```text
+CROSS + ROADS = DANGER
+```
 
-4. Universal Cryptarithmetic Solver
-Problem
-Assign unique digits to letters to solve word addition puzzles (configured by default to solve CROSS + ROADS = DANGER).
+Concepts explored:
 
-CSP Formulation
-Variables: Dynamically extracted unique letters from the provided words
+- Symbolic reasoning
+- Constraint enforcement
+- Combinatorial search
+- Logical validation
 
-Domain: Digits {0 - 9}
+## Core Concepts
 
-Constraints:
+This project explores foundational concepts in artificial intelligence, including:
 
-All unique letters must map to unique digits
+- Constraint Satisfaction Problems (CSP)
+- Backtracking algorithms
+- Recursive search strategies
+- Constraint validation
+- Graph-based problem modeling
+- Combinatorial optimization
 
-No leading zeros allowed for the first letter of any word
+## Tech Stack
 
-The mathematical equation must hold exactly
+- Python
+- NetworkX
+- Matplotlib
+- Graph Theory Concepts
+- Artificial Intelligence Fundamentals
 
-Method: Backtracking assignment of digits to letters with validation on final complete assignments
+## Project Structure
 
-Concepts Used
-Constraint Satisfaction Problems (CSP)
-
-Backtracking Algorithm
-
-Constraint Checking & Validation
-
-Recursion
-
-Graph Representation
-
-Project Files
+```text
 australia_map_coloring.py
-
 telangana_map_coloring.py
-
 sudoku_solver.py
-
 cryptarithmetic_solver.py
+```
 
-How to Run
-Run each script directly through Python in your terminal:
+## Getting Started
 
-Bash
+Run individual modules using:
+
+```bash
 python australia_map_coloring.py
 python sudoku_solver.py
 python cryptarithmetic_solver.py
 python telangana_map_coloring.py
-Optional Dependencies
-(Required only for the Telangana visualization graph)
+```
 
-Bash
+Optional dependencies for graph visualization:
+
+```bash
 pip install networkx matplotlib
-Conclusion
-These implementations demonstrate how map coloring, Sudoku generation, and cryptarithmetic logic can be modeled and solved as CSPs using the backtracking algorithm.
+```
+
+## Key Takeaways
+
+Through this project, I explored:
+
+- Modeling problems using constraints
+- Efficient search strategies in AI systems
+- Recursive reasoning techniques
+- Graph-based problem solving
+- Performance tradeoffs in combinatorial search
+
+---
+
+This repository reflects an exploration of intelligent problem-solving systems and foundational approaches in artificial intelligence.
